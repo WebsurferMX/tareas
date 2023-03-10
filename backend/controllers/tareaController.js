@@ -46,9 +46,10 @@ const deleteTareas = asyncHandler(async (req, res) => {
         throw new Error('Tarea no encontrada')
     }
 
-    //await tarea.remove
+    //await tarea.remove()
+    await tarea.deleteOne()
 
-    const tareaBorrada = await Tarea.findByIdAndDelete(req.params.id)
+    //const tareaBorrada = await Tarea.findByIdAndDelete(req.params.id)
 
     res.status(200).json({ id: req.params.id })
 })
