@@ -6,7 +6,7 @@ const getTareas = asyncHandler(async (req, res) => {
     const tareas = await Tarea.find({ user: req.user.id })
 
     res.status(200).json(tareas)
-})
+}) 
 
 const setTareas = asyncHandler(async (req, res) => {
 
@@ -24,7 +24,7 @@ const setTareas = asyncHandler(async (req, res) => {
     res.status(201).json(tarea)
 })
 
-const updateTareas = asyncHandler(async (req, res) => {
+const updateTareas = asyncHandler(async (req, res) => { 
 
     const tarea = await Tarea.findById(req.params.id)
 
